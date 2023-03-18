@@ -1,0 +1,82 @@
+﻿@inject IMessageService _message
+
+@page "/newrecord"
+
+<PageTitle>Novo Registro</PageTitle>
+
+<h1>Novo Registro</h1>
+
+@using System.Text.Json;
+
+<Form Model="@model"
+      LabelColSpan="4"
+      WrapperColSpan="16"
+      OnFinish="OnFinish"
+      OnFinishFailed="OnFinishFailed"
+      Size="@AntSizeLDSType.Default">
+
+    <FormItem Label="Nome">
+        <Input @bind-Value="@context.Input"/>
+    </FormItem>
+    <FormItem Label="Descrição">
+        <TextArea @bind-Value="@context.InputArea" />
+    </FormItem>
+    <FormItem Label="Data de Inclusão">
+        <DatePicker @bind-Value="@context.DatePicker"/>
+    </FormItem>
+    <FormItem Label="Data de Vencimento">
+        <DatePicker @bind-Value="@context.DatePicker"/>
+    </FormItem>
+    <FormItem Label="Status">
+        <Switch @bind-Value="@context.Switch"/>
+    </FormItem>
+    <FormItem Label="Tipo">
+        <RadioGroup @bind-Value="@context.Radio">
+            <Radio Style="color: red" RadioButton Value="@("Despesa")"><Icon Type="fall" Theme="outline"/> Despesa</Radio>
+            <Radio Style="color: green" RadioButton Value="@("Investimento")"><Icon Type="rise" Theme="outline"/> Investimento</Radio>
+        </RadioGroup>
+    </FormItem>
+    <FormItem WrapperColOffset="11" WrapperColSpan="16">
+        <Button HtmlType="submit" Color="Color.Green4" Type="@ButtonType.Primary" Icon="@IconType.Outline.Check" Size="@ButtonSize.Default">Registrar</Button>
+    </FormItem>
+</Form>
+
+@code
+{
+    
+    
+    public class Model
+    {
+        public string Input { get; set; }
+        public string InputArea { get; set; }
+        public DateTime? DatePicker { get; set; }
+        public bool Switch { get; set; }
+        public string Radio { get; set; }
+    }
+
+    private Model model = new Model();
+    
+
+    private void OnFinish(EditContext editContext)
+    {
+        Console.WriteLine($"Success:{JsonSerializer.Serialize(model)}");
+        Success();
+    }
+
+    private void OnFinishFailed(EditContext editContext)
+    {
+        Console.WriteLine($"Failed:{JsonSerializer.Serialize(model)}");
+        Error();
+    }
+    
+    private async Task Success()
+    {
+        await _message.Success("Seu registro foi adicionado!");
+    }
+    
+    private async Task Error()
+    {
+        await _message.Error("Não foi possivel adicionar seu registro! Tente novamente ou reinicie o sistema");
+
+    }
+}

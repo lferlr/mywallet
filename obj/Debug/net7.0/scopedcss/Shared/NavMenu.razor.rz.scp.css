@@ -1,0 +1,18 @@
+#components-layout-demo-side .logo[b-kx4xo4k4xm] {
+    height: 16px;
+    background: rgba(254, 254, 254, 0.2);
+    margin: 16px;
+}
+
+.site-layout .site-layout-background[b-kx4xo4k4xm] {
+    background: #fff;
+}
+
+.logo-img[b-kx4xo4k4xm] {
+    height: 64px;
+    width: 64px;
+    margin: 16px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

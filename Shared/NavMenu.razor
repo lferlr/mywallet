@@ -1,0 +1,37 @@
+﻿<Sider Collapsible Collapsed=@collapsed OnCollapse=@onCollapse>
+    <div>
+        <img class="logo-img" alt="Logo do site" src="img/walleticon.png"/>
+    </div>
+    <Menu Theme="MenuTheme.Dark" Mode="MenuMode.Inline">
+        <MenuItem RouterLink="">
+            <Icon Type="home" Theme="outline"/>
+            <span>Home</span>
+        </MenuItem>
+        <MenuItem RouterLink="NewRecord">
+            <Icon Type="rise" Theme="outline"/>
+            <span>Novo Registro</span>
+        </MenuItem>
+        <MenuItem RouterLink="Expense">
+            <Icon Type="fall" Theme="outline"/>
+            <span>Despesas</span>
+        </MenuItem>
+        <MenuItem RouterLink="Investment">
+            <Icon Type="rise" Theme="outline"/>
+            <span>Investimentos</span>
+        </MenuItem>
+        <MenuItem RouterLink="FetchData">
+            <Icon Type="database" Theme="outline"/>
+            <span>Fetch Data</span>
+        </MenuItem>
+    </Menu>
+</Sider>
+
+@code {
+    bool collapsed;
+
+    void onCollapse(bool collapsed)
+    {
+        this.collapsed = collapsed;
+    }
+
+}
