@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets/MyWallet.styles.css"
     },
     {
+      "Id": "/Users/lucasrodrigues/dev/Blazor/MyWallet/wwwroot/.DS_Store",
+      "PackagePath": "staticwebassets/.DS_Store"
+    },
+    {
       "Id": "/Users/lucasrodrigues/dev/Blazor/MyWallet/wwwroot/css/app.css",
       "PackagePath": "staticwebassets/css/app.css"
     },
@@ -59,6 +63,10 @@
     {
       "Id": "/Users/lucasrodrigues/dev/Blazor/MyWallet/wwwroot/css/open-iconic/font/fonts/open-iconic.woff",
       "PackagePath": "staticwebassets/css/open-iconic/font/fonts/open-iconic.woff"
+    },
+    {
+      "Id": "/Users/lucasrodrigues/dev/Blazor/MyWallet/wwwroot/favicon-32x32.png",
+      "PackagePath": "staticwebassets/favicon-32x32.png"
     },
     {
       "Id": "/Users/lucasrodrigues/dev/Blazor/MyWallet/wwwroot/favicon.png",

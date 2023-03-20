@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "1bgZA2p1AC1mMqVvzV0ek1tSIQrHu57yW+HpCsY8Lls=",
+  "Hash": "lNyKXd2vB59eoHWgvDhhTwX174ELuXTDqQhEsxr08Ks=",
   "Source": "MyWallet",
   "BasePath": "/",
   "Mode": "Root",
@@ -13226,6 +13226,23 @@
       "OriginalItemSpec": "/Users/lucasrodrigues/dev/Blazor/MyWallet/obj/Debug/net7.0/scopedcss/projectbundle/MyWallet.bundle.scp.css"
     },
     {
+      "Identity": "/Users/lucasrodrigues/dev/Blazor/MyWallet/wwwroot/.DS_Store",
+      "SourceId": "MyWallet",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/lucasrodrigues/dev/Blazor/MyWallet/wwwroot/",
+      "BasePath": "/",
+      "RelativePath": ".DS_Store",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/.DS_Store"
+    },
+    {
       "Identity": "/Users/lucasrodrigues/dev/Blazor/MyWallet/wwwroot/css/app.css",
       "SourceId": "MyWallet",
       "SourceType": "Discovered",
@@ -13428,6 +13445,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/css/open-iconic/README.md"
+    },
+    {
+      "Identity": "/Users/lucasrodrigues/dev/Blazor/MyWallet/wwwroot/favicon-32x32.png",
+      "SourceId": "MyWallet",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/lucasrodrigues/dev/Blazor/MyWallet/wwwroot/",
+      "BasePath": "/",
+      "RelativePath": "favicon-32x32.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/favicon-32x32.png"
     },
     {
       "Identity": "/Users/lucasrodrigues/dev/Blazor/MyWallet/wwwroot/favicon.png",
