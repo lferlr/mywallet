@@ -1,48 +1,59 @@
 ﻿@page "/expense"
-@using System.ComponentModel
-@using AntDesign
-@using AntDesign.TableModels
-@using AntDesign.Core.Extensions
 
-@inject HttpClient Http
+@using MyWallet.Services
+@inject IExpenseService ExpenseService;
+@inject HttpClient Http;
 
 <PageTitle>Despesas</PageTitle>
 
 <h1>Minhas Despesas</h1>
 
-<p>This component demonstrates fetching data from the server.</p>
-
-@if (forecasts == null)
+@if (expenses != null)
 {
-    <p><em>Loading...</em></p>
+    <Table DataSource="@expenses.ToList()" Bordered=@true HidePagination="@true">
+        <PropertyColumn Property="c => c.Category" Title="Categoria" >
+            <a>@context.Category</a>
+        </PropertyColumn>
+        <PropertyColumn Property="c => c.Description" Title="Descrição">
+            <a>@context.Description</a>
+        </PropertyColumn>
+        <PropertyColumn Property="c => c.Tag" Title="Tag" >
+            <Tag Color="@PresetColor.Cyan.ToString()">@context.Tag.ToString()</Tag>
+        </PropertyColumn>
+        <PropertyColumn Property="c => c.Value" Title="Valor (R$)">
+            <a>@context.Value</a>
+        </PropertyColumn>
+        <PropertyColumn Property="c => c.DueDate" Title="Data de Vencimento" Format="yyyy/MM/dd">
+            <a>@context.DueDate.ToString("d/M/yy")</a>
+        </PropertyColumn>
+        <PropertyColumn Property="c => c.RegistrationDate" Title="Data de Registro" Format="dd-MM-yyyy">
+            <a>@context.RegistrationDate.ToString("d/M/yy")</a>
+        </PropertyColumn>
+        <PropertyColumn Property="c => c.Status" Title="Status">
+            @if (context.Status)
+            {
+                <Tag Color="@PresetColor.Red.ToString()">A Pagar</Tag>
+            }
+            else
+            {
+                <Tag Color="@PresetColor.Green.ToString()">Paga</Tag>
+            }
+        </PropertyColumn>
+    </Table>
 }
 else
 {
-    <Table TItem="WeatherForecast" DataSource="@forecasts">
-        <PropertyColumn Title="Date" Property="c=>c.Date.ToShortDateString()" />
-        <PropertyColumn Title="Template. (C)" Property="c=>c.TemperatureC" />
-        <PropertyColumn Title="Template. (F)" Property="c=>c.TemperatureF" />
-        <PropertyColumn Title="Summary" Field="context.Summary"/>
-    </Table>
+    <p>
+        <em>Loading...</em>
+    </p>
 }
 
 @code {
-    ITable table;
-    private WeatherForecast[]? forecasts;
+    private IEnumerable<MyWallet.ViewModel.Expense> expenses;
 
     protected override async Task OnInitializedAsync()
     {
-        forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("sample-data/weather.json");
+        expenses = await ExpenseService.GetAll();
     }
 
-    public class WeatherForecast
-    {
-        public DateOnly Date { get; set; }
-
-        public int TemperatureC { get; set; }
-
-        public string? Summary { get; set; }
-
-        public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-    }
 }
