@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "lNyKXd2vB59eoHWgvDhhTwX174ELuXTDqQhEsxr08Ks=",
+  "Hash": "jxp57/6oj30u24pEQcvceJqObTPc/l+3DImDwsoN2jY=",
   "Source": "MyWallet",
   "BasePath": "/",
   "Mode": "Root",
@@ -6239,6 +6239,23 @@
       "OriginalItemSpec": "/Users/lucasrodrigues/.nuget/packages/antdesign/0.14.4/staticwebassets/less/upload/style/rtl.less"
     },
     {
+      "Identity": "/Users/lucasrodrigues/.nuget/packages/microsoft.aspnetcore.components.webassembly.authentication/7.0.5/staticwebassets/AuthenticationService.js",
+      "SourceId": "Microsoft.AspNetCore.Components.WebAssembly.Authentication",
+      "SourceType": "Package",
+      "ContentRoot": "/Users/lucasrodrigues/.nuget/packages/microsoft.aspnetcore.components.webassembly.authentication/7.0.5/staticwebassets/",
+      "BasePath": "_content/Microsoft.AspNetCore.Components.WebAssembly.Authentication",
+      "RelativePath": "AuthenticationService.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "/Users/lucasrodrigues/.nuget/packages/microsoft.aspnetcore.components.webassembly.authentication/7.0.5/staticwebassets/AuthenticationService.js"
+    },
+    {
       "Identity": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/_framework/AntDesign.dll",
       "SourceId": "MyWallet",
       "SourceType": "Computed",
@@ -6423,7 +6440,24 @@
       "AssetTraitValue": "runtime",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "/Users/lucasrodrigues/.nuget/packages/microsoft.aspnetcore.authorization/7.0.1/lib/net7.0/Microsoft.AspNetCore.Authorization.dll"
+      "OriginalItemSpec": "/Users/lucasrodrigues/.nuget/packages/microsoft.aspnetcore.authorization/7.0.5/lib/net7.0/Microsoft.AspNetCore.Authorization.dll"
+    },
+    {
+      "Identity": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/_framework/Microsoft.AspNetCore.Components.Authorization.dll",
+      "SourceId": "MyWallet",
+      "SourceType": "Computed",
+      "ContentRoot": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.Components.Authorization.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "/Users/lucasrodrigues/.nuget/packages/microsoft.aspnetcore.components.authorization/7.0.5/lib/net7.0/Microsoft.AspNetCore.Components.Authorization.dll"
     },
     {
       "Identity": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/_framework/Microsoft.AspNetCore.Components.DataAnnotations.Validation.dll",
@@ -6457,7 +6491,7 @@
       "AssetTraitValue": "runtime",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "/Users/lucasrodrigues/.nuget/packages/microsoft.aspnetcore.components/7.0.1/lib/net7.0/Microsoft.AspNetCore.Components.dll"
+      "OriginalItemSpec": "/Users/lucasrodrigues/.nuget/packages/microsoft.aspnetcore.components/7.0.5/lib/net7.0/Microsoft.AspNetCore.Components.dll"
     },
     {
       "Identity": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/_framework/Microsoft.AspNetCore.Components.Forms.dll",
@@ -6474,7 +6508,7 @@
       "AssetTraitValue": "runtime",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "/Users/lucasrodrigues/.nuget/packages/microsoft.aspnetcore.components.forms/7.0.1/lib/net7.0/Microsoft.AspNetCore.Components.Forms.dll"
+      "OriginalItemSpec": "/Users/lucasrodrigues/.nuget/packages/microsoft.aspnetcore.components.forms/7.0.5/lib/net7.0/Microsoft.AspNetCore.Components.Forms.dll"
     },
     {
       "Identity": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/_framework/Microsoft.AspNetCore.Components.Web.dll",
@@ -6491,7 +6525,24 @@
       "AssetTraitValue": "runtime",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "/Users/lucasrodrigues/.nuget/packages/microsoft.aspnetcore.components.web/7.0.1/lib/net7.0/Microsoft.AspNetCore.Components.Web.dll"
+      "OriginalItemSpec": "/Users/lucasrodrigues/.nuget/packages/microsoft.aspnetcore.components.web/7.0.5/lib/net7.0/Microsoft.AspNetCore.Components.Web.dll"
+    },
+    {
+      "Identity": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/_framework/Microsoft.AspNetCore.Components.WebAssembly.Authentication.dll",
+      "SourceId": "MyWallet",
+      "SourceType": "Computed",
+      "ContentRoot": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.Components.WebAssembly.Authentication.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "/Users/lucasrodrigues/.nuget/packages/microsoft.aspnetcore.components.webassembly.authentication/7.0.5/lib/net7.0/Microsoft.AspNetCore.Components.WebAssembly.Authentication.dll"
     },
     {
       "Identity": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/_framework/Microsoft.AspNetCore.Components.WebAssembly.dll",
@@ -6525,7 +6576,7 @@
       "AssetTraitValue": "runtime",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "/Users/lucasrodrigues/.nuget/packages/microsoft.aspnetcore.metadata/7.0.1/lib/net7.0/Microsoft.AspNetCore.Metadata.dll"
+      "OriginalItemSpec": "/Users/lucasrodrigues/.nuget/packages/microsoft.aspnetcore.metadata/7.0.5/lib/net7.0/Microsoft.AspNetCore.Metadata.dll"
     },
     {
       "Identity": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/_framework/Microsoft.CSharp.dll",
@@ -6763,7 +6814,7 @@
       "AssetTraitValue": "runtime",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "/Users/lucasrodrigues/.nuget/packages/microsoft.extensions.options/7.0.0/lib/net7.0/Microsoft.Extensions.Options.dll"
+      "OriginalItemSpec": "/Users/lucasrodrigues/.nuget/packages/microsoft.extensions.options/7.0.1/lib/net7.0/Microsoft.Extensions.Options.dll"
     },
     {
       "Identity": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/_framework/Microsoft.Extensions.Primitives.dll",
@@ -6797,7 +6848,7 @@
       "AssetTraitValue": "runtime",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "/Users/lucasrodrigues/.nuget/packages/microsoft.jsinterop/7.0.1/lib/net7.0/Microsoft.JSInterop.dll"
+      "OriginalItemSpec": "/Users/lucasrodrigues/.nuget/packages/microsoft.jsinterop/7.0.5/lib/net7.0/Microsoft.JSInterop.dll"
     },
     {
       "Identity": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/_framework/Microsoft.JSInterop.WebAssembly.dll",
@@ -9877,23 +9928,6 @@
       "OriginalItemSpec": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/_framework/mscorlib.dll"
     },
     {
-      "Identity": "/Users/lucasrodrigues/dev/Blazor/MyWallet/obj/Debug/net7.0/build-gz/0q86gw0U.gz",
-      "SourceId": "MyWallet",
-      "SourceType": "Computed",
-      "ContentRoot": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/",
-      "BasePath": "/",
-      "RelativePath": "_framework/Microsoft.AspNetCore.Components.Web.dll.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "RelatedAsset": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/_framework/Microsoft.AspNetCore.Components.Web.dll",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/_framework/Microsoft.AspNetCore.Components.Web.dll"
-    },
-    {
       "Identity": "/Users/lucasrodrigues/dev/Blazor/MyWallet/obj/Debug/net7.0/build-gz/0ThG+C6l.gz",
       "SourceId": "MyWallet",
       "SourceType": "Computed",
@@ -10268,6 +10302,23 @@
       "OriginalItemSpec": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/_framework/System.IO.MemoryMappedFiles.dll"
     },
     {
+      "Identity": "/Users/lucasrodrigues/dev/Blazor/MyWallet/obj/Debug/net7.0/build-gz/619FiiQ+.gz",
+      "SourceId": "MyWallet",
+      "SourceType": "Computed",
+      "ContentRoot": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.Authorization.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/_framework/Microsoft.AspNetCore.Authorization.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/_framework/Microsoft.AspNetCore.Authorization.dll"
+    },
+    {
       "Identity": "/Users/lucasrodrigues/dev/Blazor/MyWallet/obj/Debug/net7.0/build-gz/6LxAbVRh.gz",
       "SourceId": "MyWallet",
       "SourceType": "Computed",
@@ -10557,6 +10608,23 @@
       "OriginalItemSpec": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/_framework/System.Resources.Writer.dll"
     },
     {
+      "Identity": "/Users/lucasrodrigues/dev/Blazor/MyWallet/obj/Debug/net7.0/build-gz/92xMhbIh.gz",
+      "SourceId": "MyWallet",
+      "SourceType": "Computed",
+      "ContentRoot": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.Components.WebAssembly.Authentication.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/_framework/Microsoft.AspNetCore.Components.WebAssembly.Authentication.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/_framework/Microsoft.AspNetCore.Components.WebAssembly.Authentication.dll"
+    },
+    {
       "Identity": "/Users/lucasrodrigues/dev/Blazor/MyWallet/obj/Debug/net7.0/build-gz/9j5Hdo1g.gz",
       "SourceId": "MyWallet",
       "SourceType": "Computed",
@@ -10710,23 +10778,6 @@
       "OriginalItemSpec": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/_framework/Microsoft.Extensions.Configuration.Binder.dll"
     },
     {
-      "Identity": "/Users/lucasrodrigues/dev/Blazor/MyWallet/obj/Debug/net7.0/build-gz/b13GbOIz.gz",
-      "SourceId": "MyWallet",
-      "SourceType": "Computed",
-      "ContentRoot": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/",
-      "BasePath": "/",
-      "RelativePath": "_framework/Microsoft.AspNetCore.Metadata.dll.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "RelatedAsset": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/_framework/Microsoft.AspNetCore.Metadata.dll",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/_framework/Microsoft.AspNetCore.Metadata.dll"
-    },
-    {
       "Identity": "/Users/lucasrodrigues/dev/Blazor/MyWallet/obj/Debug/net7.0/build-gz/bf0bLX0l.gz",
       "SourceId": "MyWallet",
       "SourceType": "Computed",
@@ -10861,6 +10912,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/_framework/System.IO.dll"
+    },
+    {
+      "Identity": "/Users/lucasrodrigues/dev/Blazor/MyWallet/obj/Debug/net7.0/build-gz/COAiVjsw.gz",
+      "SourceId": "MyWallet",
+      "SourceType": "Computed",
+      "ContentRoot": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.Components.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/_framework/Microsoft.AspNetCore.Components.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/_framework/Microsoft.AspNetCore.Components.dll"
     },
     {
       "Identity": "/Users/lucasrodrigues/dev/Blazor/MyWallet/obj/Debug/net7.0/build-gz/ctsY15Xv.gz",
@@ -11186,6 +11254,23 @@
       "OriginalItemSpec": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/_framework/System.IO.IsolatedStorage.dll"
     },
     {
+      "Identity": "/Users/lucasrodrigues/dev/Blazor/MyWallet/obj/Debug/net7.0/build-gz/F6UWuUmD.gz",
+      "SourceId": "MyWallet",
+      "SourceType": "Computed",
+      "ContentRoot": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.Components.Forms.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/_framework/Microsoft.AspNetCore.Components.Forms.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/_framework/Microsoft.AspNetCore.Components.Forms.dll"
+    },
+    {
       "Identity": "/Users/lucasrodrigues/dev/Blazor/MyWallet/obj/Debug/net7.0/build-gz/f6wRWZao.gz",
       "SourceId": "MyWallet",
       "SourceType": "Computed",
@@ -11201,6 +11286,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/_framework/System.ValueTuple.dll"
+    },
+    {
+      "Identity": "/Users/lucasrodrigues/dev/Blazor/MyWallet/obj/Debug/net7.0/build-gz/F7h78yst.gz",
+      "SourceId": "MyWallet",
+      "SourceType": "Computed",
+      "ContentRoot": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.Metadata.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/_framework/Microsoft.AspNetCore.Metadata.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/_framework/Microsoft.AspNetCore.Metadata.dll"
     },
     {
       "Identity": "/Users/lucasrodrigues/dev/Blazor/MyWallet/obj/Debug/net7.0/build-gz/FdUiEGTz.gz",
@@ -11492,6 +11594,23 @@
       "OriginalItemSpec": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/_framework/System.Reflection.Emit.Lightweight.dll"
     },
     {
+      "Identity": "/Users/lucasrodrigues/dev/Blazor/MyWallet/obj/Debug/net7.0/build-gz/idSRZ2nl.gz",
+      "SourceId": "MyWallet",
+      "SourceType": "Computed",
+      "ContentRoot": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.Extensions.Options.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/_framework/Microsoft.Extensions.Options.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/_framework/Microsoft.Extensions.Options.dll"
+    },
+    {
       "Identity": "/Users/lucasrodrigues/dev/Blazor/MyWallet/obj/Debug/net7.0/build-gz/igyfLPaj.gz",
       "SourceId": "MyWallet",
       "SourceType": "Computed",
@@ -11696,6 +11815,23 @@
       "OriginalItemSpec": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/_framework/System.Dynamic.Runtime.dll"
     },
     {
+      "Identity": "/Users/lucasrodrigues/dev/Blazor/MyWallet/obj/Debug/net7.0/build-gz/l3vvOa90.gz",
+      "SourceId": "MyWallet",
+      "SourceType": "Computed",
+      "ContentRoot": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.Components.Web.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/_framework/Microsoft.AspNetCore.Components.Web.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/_framework/Microsoft.AspNetCore.Components.Web.dll"
+    },
+    {
       "Identity": "/Users/lucasrodrigues/dev/Blazor/MyWallet/obj/Debug/net7.0/build-gz/Lkafvnzh.gz",
       "SourceId": "MyWallet",
       "SourceType": "Computed",
@@ -11728,23 +11864,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/_framework/System.Net.dll"
-    },
-    {
-      "Identity": "/Users/lucasrodrigues/dev/Blazor/MyWallet/obj/Debug/net7.0/build-gz/M8x8kJDl.gz",
-      "SourceId": "MyWallet",
-      "SourceType": "Computed",
-      "ContentRoot": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/",
-      "BasePath": "/",
-      "RelativePath": "_framework/Microsoft.AspNetCore.Authorization.dll.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "RelatedAsset": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/_framework/Microsoft.AspNetCore.Authorization.dll",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/_framework/Microsoft.AspNetCore.Authorization.dll"
     },
     {
       "Identity": "/Users/lucasrodrigues/dev/Blazor/MyWallet/obj/Debug/net7.0/build-gz/mcSKCHf+.gz",
@@ -11832,6 +11951,23 @@
       "OriginalItemSpec": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/_framework/System.Security.Principal.dll"
     },
     {
+      "Identity": "/Users/lucasrodrigues/dev/Blazor/MyWallet/obj/Debug/net7.0/build-gz/ncb+Kr67.gz",
+      "SourceId": "MyWallet",
+      "SourceType": "Computed",
+      "ContentRoot": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.JSInterop.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/_framework/Microsoft.JSInterop.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/_framework/Microsoft.JSInterop.dll"
+    },
+    {
       "Identity": "/Users/lucasrodrigues/dev/Blazor/MyWallet/obj/Debug/net7.0/build-gz/nlwYfBgX.gz",
       "SourceId": "MyWallet",
       "SourceType": "Computed",
@@ -11881,23 +12017,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/_framework/System.Runtime.Handles.dll"
-    },
-    {
-      "Identity": "/Users/lucasrodrigues/dev/Blazor/MyWallet/obj/Debug/net7.0/build-gz/o6imnBvb.gz",
-      "SourceId": "MyWallet",
-      "SourceType": "Computed",
-      "ContentRoot": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/",
-      "BasePath": "/",
-      "RelativePath": "_framework/Microsoft.AspNetCore.Components.Forms.dll.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "RelatedAsset": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/_framework/Microsoft.AspNetCore.Components.Forms.dll",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/_framework/Microsoft.AspNetCore.Components.Forms.dll"
     },
     {
       "Identity": "/Users/lucasrodrigues/dev/Blazor/MyWallet/obj/Debug/net7.0/build-gz/obITUNJg.gz",
@@ -12034,23 +12153,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/_framework/System.Runtime.Serialization.dll"
-    },
-    {
-      "Identity": "/Users/lucasrodrigues/dev/Blazor/MyWallet/obj/Debug/net7.0/build-gz/P7aSJ9hb.gz",
-      "SourceId": "MyWallet",
-      "SourceType": "Computed",
-      "ContentRoot": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/",
-      "BasePath": "/",
-      "RelativePath": "_framework/Microsoft.AspNetCore.Components.dll.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "RelatedAsset": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/_framework/Microsoft.AspNetCore.Components.dll",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/_framework/Microsoft.AspNetCore.Components.dll"
     },
     {
       "Identity": "/Users/lucasrodrigues/dev/Blazor/MyWallet/obj/Debug/net7.0/build-gz/Pa0xe2XK.gz",
@@ -12238,23 +12340,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/_framework/System.Runtime.CompilerServices.VisualC.dll"
-    },
-    {
-      "Identity": "/Users/lucasrodrigues/dev/Blazor/MyWallet/obj/Debug/net7.0/build-gz/r6tJxPey.gz",
-      "SourceId": "MyWallet",
-      "SourceType": "Computed",
-      "ContentRoot": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/",
-      "BasePath": "/",
-      "RelativePath": "_framework/Microsoft.Extensions.Options.dll.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "RelatedAsset": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/_framework/Microsoft.Extensions.Options.dll",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/_framework/Microsoft.Extensions.Options.dll"
     },
     {
       "Identity": "/Users/lucasrodrigues/dev/Blazor/MyWallet/obj/Debug/net7.0/build-gz/RaCG2KTV.gz",
@@ -12461,6 +12546,23 @@
       "OriginalItemSpec": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/_framework/dotnet.7.0.1.krh1tcb96h.js"
     },
     {
+      "Identity": "/Users/lucasrodrigues/dev/Blazor/MyWallet/obj/Debug/net7.0/build-gz/SqdTS41M.gz",
+      "SourceId": "MyWallet",
+      "SourceType": "Computed",
+      "ContentRoot": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.Components.Authorization.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/_framework/Microsoft.AspNetCore.Components.Authorization.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/_framework/Microsoft.AspNetCore.Components.Authorization.dll"
+    },
+    {
       "Identity": "/Users/lucasrodrigues/dev/Blazor/MyWallet/obj/Debug/net7.0/build-gz/SwxXCgID.gz",
       "SourceId": "MyWallet",
       "SourceType": "Computed",
@@ -12493,23 +12595,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/_framework/System.Security.Cryptography.dll"
-    },
-    {
-      "Identity": "/Users/lucasrodrigues/dev/Blazor/MyWallet/obj/Debug/net7.0/build-gz/TBOJ4ci8.gz",
-      "SourceId": "MyWallet",
-      "SourceType": "Computed",
-      "ContentRoot": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/",
-      "BasePath": "/",
-      "RelativePath": "_framework/Microsoft.JSInterop.dll.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "RelatedAsset": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/_framework/Microsoft.JSInterop.dll",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/_framework/Microsoft.JSInterop.dll"
     },
     {
       "Identity": "/Users/lucasrodrigues/dev/Blazor/MyWallet/obj/Debug/net7.0/build-gz/tbQMN6oz.gz",

@@ -1,4 +1,5 @@
-﻿@inject IMessageService _message
+﻿@inject IMessageService Message
+@inject IExpenseService ExpenseService
 
 @page "/newrecord"
 
@@ -7,34 +8,44 @@
 <h1>Novo Registro</h1>
 
 @using System.Text.Json;
+@using MyWallet.Services
 
-<Form Model="@model"
+<Form Model="@expense"
       LabelColSpan="4"
       WrapperColSpan="16"
       OnFinish="OnFinish"
       OnFinishFailed="OnFinishFailed"
       Size="@AntSizeLDSType.Default">
 
-    <FormItem Label="Nome">
-        <Input @bind-Value="@context.Input"/>
+    <FormItem Label="Categoria">
+        <Input @bind-Value="@context.Category"/>
     </FormItem>
     <FormItem Label="Descrição">
-        <TextArea @bind-Value="@context.InputArea" />
+        <TextArea @bind-Value="@context.Description" ></TextArea>
     </FormItem>
     <FormItem Label="Data de Inclusão">
-        <DatePicker @bind-Value="@context.DatePicker"/>
+        <DatePicker @bind-Value="@context.RegistrationDate"/>
     </FormItem>
     <FormItem Label="Data de Vencimento">
-        <DatePicker @bind-Value="@context.DatePicker"/>
+        <DatePicker @bind-Value="@context.DueDate"/>
     </FormItem>
     <FormItem Label="Status">
-        <Switch @bind-Value="@context.Switch"/>
+        <Switch @bind-Value="@context.Status" />
     </FormItem>
     <FormItem Label="Tipo">
-        <RadioGroup @bind-Value="@context.Radio">
-            <Radio Style="color: red" RadioButton Value="@("Despesa")"><Icon Type="fall" Theme="outline"/> Despesa</Radio>
-            <Radio Style="color: green" RadioButton Value="@("Investimento")"><Icon Type="rise" Theme="outline"/> Investimento</Radio>
-        </RadioGroup>
+        <EnumSelect TEnum="Tag" bind-Value="context.Tag" />
+        @* <RadioGroup @bind-Value="@context.Tag"> *@
+        @*     <Radio Style="color: blue" RadioButton Value="@ViewModel.Tag.Carro"><Icon Type="fall" Theme="outline"/>Carro</Radio> *@
+        @*     <Radio Style="color: yellow" RadioButton Value="@ViewModel.Tag.Casa"><Icon Type="rise" Theme="outline"/>Casa</Radio> *@
+        @*     <Radio Style="color: orange" RadioButton Value="@ViewModel.Tag.Comida"><Icon Type="rise" Theme="outline"/>Comida</Radio> *@
+        @*     <Radio Style="color: green" RadioButton Value="@ViewModel.Tag.Lazer"><Icon Type="rise" Theme="outline"/>Lazer</Radio> *@
+        @*     <Radio Style="color: purple" RadioButton Value="@ViewModel.Tag.Cartao"><Icon Type="rise" Theme="outline"/>Cartão</Radio> *@
+        @*     <Radio Style="color: aqua" RadioButton Value="@ViewModel.Tag.Educacao"><Icon Type="rise" Theme="outline"/>Educação</Radio> *@
+        @*     <Radio Style="color: red" RadioButton Value="@ViewModel.Tag.Outros"><Icon Type="rise" Theme="outline"/>Outros</Radio> *@
+        @* </RadioGroup> *@
+    </FormItem>
+    <FormItem Label="Valor">
+        <Input Placeholder="000,00" @bind-Value="@context.Value" />
     </FormItem>
     <FormItem WrapperColOffset="11" WrapperColSpan="16">
         <Button HtmlType="submit" Color="Color.Green4" Type="@ButtonType.Primary" Icon="@IconType.Outline.Check" Size="@ButtonSize.Default">Registrar</Button>
@@ -43,40 +54,37 @@
 
 @code
 {
-    
-    
-    public class Model
+    private ViewModel.Expense expense = new();
+
+    private async void OnFinish(EditContext editContext)
     {
-        public string Input { get; set; }
-        public string InputArea { get; set; }
-        public DateTime? DatePicker { get; set; }
-        public bool Switch { get; set; }
-        public string Radio { get; set; }
+        try
+        {
+            var tt = await ExpenseService.Create(expense);
+            Console.WriteLine($"Success:{JsonSerializer.Serialize(expense)}");
+            await Success();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine($"Failed:{JsonSerializer.Serialize(expense)}");
+            await Error();
+        }
     }
 
-    private Model model = new Model();
-    
-
-    private void OnFinish(EditContext editContext)
+    private async void OnFinishFailed(EditContext editContext)
     {
-        Console.WriteLine($"Success:{JsonSerializer.Serialize(model)}");
-        Success();
-    }
-
-    private void OnFinishFailed(EditContext editContext)
-    {
-        Console.WriteLine($"Failed:{JsonSerializer.Serialize(model)}");
-        Error();
+        Console.WriteLine($"Failed:{JsonSerializer.Serialize(expense)}");
+        await Error();
     }
     
     private async Task Success()
     {
-        await _message.Success("Seu registro foi adicionado!");
+        await Message.Success("Seu registro foi adicionado!");
     }
     
     private async Task Error()
     {
-        await _message.Error("Não foi possivel adicionar seu registro! Tente novamente ou reinicie o sistema");
+        await Message.Error("Não foi possivel adicionar seu registro! Tente novamente ou reinicie o sistema");
 
     }
 }
