@@ -14,9 +14,9 @@ builder.Services.AddAntDesign();
 
 builder.Services.AddOidcAuthentication(options =>
 {
+    builder.Configuration.Bind("Auth", options.ProviderOptions);
     options.ProviderOptions.DefaultScopes.Add("email");
-    options.UserOptions.NameClaim = "email";
-    builder.Configuration.Bind("Local", options.ProviderOptions);
+    
 });
 
 await builder.Build().RunAsync();

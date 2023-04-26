@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets/.DS_Store"
     },
     {
+      "Id": "/Users/lucasrodrigues/dev/Blazor/MyWallet/wwwroot/appsettings.json",
+      "PackagePath": "staticwebassets/appsettings.json"
+    },
+    {
       "Id": "/Users/lucasrodrigues/dev/Blazor/MyWallet/wwwroot/css/app.css",
       "PackagePath": "staticwebassets/css/app.css"
     },
@@ -83,6 +87,10 @@
     {
       "Id": "/Users/lucasrodrigues/dev/Blazor/MyWallet/wwwroot/index.html",
       "PackagePath": "staticwebassets/index.html"
+    },
+    {
+      "Id": "/Users/lucasrodrigues/dev/Blazor/MyWallet/wwwroot/js/AuthFirebase.js",
+      "PackagePath": "staticwebassets/js/AuthFirebase.js"
     },
     {
       "Id": "/Users/lucasrodrigues/dev/Blazor/MyWallet/wwwroot/sample-data/weather.json",

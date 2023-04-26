@@ -1,0 +1,14 @@
+@inject NavigationManager Navigation
+@layout AuthLayout
+
+@page "/Login"
+
+<div class="align-self-center d-flex justify-content-center" style="height: 100vh">
+    <div class="align-self-center d-flex justify-content-center">
+        <Button Icon="@IconType.Outline.Google" Color="Color.Green7" OnClick="SignInGoogle">Sign In com Google</Button>
+    </div>
+</div>
+@code {
+    private void SignInGoogle() => 
+        Navigation.NavigateToLogout("authentication/login");
+}

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "jxp57/6oj30u24pEQcvceJqObTPc/l+3DImDwsoN2jY=",
+  "Hash": "xuX+CH5UNfua0JXhBC8wBfABiniujJ5cIZUWlH6ATCU=",
   "Source": "MyWallet",
   "BasePath": "/",
   "Mode": "Root",
@@ -13328,6 +13328,23 @@
       "OriginalItemSpec": "wwwroot/.DS_Store"
     },
     {
+      "Identity": "/Users/lucasrodrigues/dev/Blazor/MyWallet/wwwroot/appsettings.json",
+      "SourceId": "MyWallet",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/lucasrodrigues/dev/Blazor/MyWallet/wwwroot/",
+      "BasePath": "/",
+      "RelativePath": "appsettings.json",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "settings",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/appsettings.json"
+    },
+    {
       "Identity": "/Users/lucasrodrigues/dev/Blazor/MyWallet/wwwroot/css/app.css",
       "SourceId": "MyWallet",
       "SourceType": "Discovered",
@@ -13615,6 +13632,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/index.html"
+    },
+    {
+      "Identity": "/Users/lucasrodrigues/dev/Blazor/MyWallet/wwwroot/js/AuthFirebase.js",
+      "SourceId": "MyWallet",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/lucasrodrigues/dev/Blazor/MyWallet/wwwroot/",
+      "BasePath": "/",
+      "RelativePath": "js/AuthFirebase.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/js/AuthFirebase.js"
     },
     {
       "Identity": "/Users/lucasrodrigues/dev/Blazor/MyWallet/wwwroot/sample-data/weather.json",

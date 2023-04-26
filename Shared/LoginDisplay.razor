@@ -6,11 +6,15 @@
         <button class="nav-link btn btn-link" @onclick="BeginLogOut">Sair</button>
     </Authorized>
     <NotAuthorized>
-        <a href="authentication/login">Log in</a>
+        <button class="nav-link btn btn-link" @onclick="SigninGoogle">Sign In com Google</button>
+        @* <a href="authentication/login">Log in</a> *@
     </NotAuthorized>
 </AuthorizeView>
 
 @code{
     private void BeginLogOut() => 
         Navigation.NavigateToLogout("authentication/logout");
+
+    private void SigninGoogle() => 
+        Navigation.NavigateTo("authentication/login");
 }

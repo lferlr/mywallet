@@ -835,7 +835,6 @@
 /Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/_framework/Microsoft.AspNetCore.Components.WebAssembly.Authentication.dll
 /Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/_framework/Microsoft.AspNetCore.Components.WebAssembly.Authentication.dll.gz
 /Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/_framework/Microsoft.AspNetCore.Components.Authorization.dll.gz
-/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/appsettings.json
 /Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/Microsoft.AspNetCore.Components.Authorization.dll
 /Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/Microsoft.AspNetCore.Components.WebAssembly.Authentication.dll
 /Users/lucasrodrigues/dev/Blazor/MyWallet/obj/Debug/net7.0/build-gz/619FiiQ+.gz
@@ -847,3 +846,5 @@
 /Users/lucasrodrigues/dev/Blazor/MyWallet/obj/Debug/net7.0/build-gz/F7h78yst.gz
 /Users/lucasrodrigues/dev/Blazor/MyWallet/obj/Debug/net7.0/build-gz/idSRZ2nl.gz
 /Users/lucasrodrigues/dev/Blazor/MyWallet/obj/Debug/net7.0/build-gz/ncb+Kr67.gz
+/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/appsettings.json
+/Users/lucasrodrigues/dev/Blazor/MyWallet/obj/Debug/net7.0/scopedcss/Pages/Auth/Login.Razor.rz.scp.css
