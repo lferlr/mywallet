@@ -16,7 +16,6 @@ builder.Services.AddOidcAuthentication(options =>
 {
     builder.Configuration.Bind("Auth", options.ProviderOptions);
     options.ProviderOptions.DefaultScopes.Add("email");
-    
 });
 
 await builder.Build().RunAsync();

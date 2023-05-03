@@ -28,6 +28,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXhwZW5zZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/lucasrodrigues/dev/Blazor/MyWallet/Pages/ExpenseUser.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXhwZW5zZVVzZXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/lucasrodrigues/dev/Blazor/MyWallet/Pages/FetchData.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRmV0Y2hEYXRhLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 

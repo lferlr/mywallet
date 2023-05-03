@@ -205,13 +205,13 @@
       "mscorlib.dll": "sha256-UH9jptJH1wZ3XMBPuMMAEaUKpfRxc5AgXkLdAFAvNVE=",
       "netstandard.dll": "sha256-+jUzj0FB0YcoBUeSkSNEjhVDTG08qbZ2twfCBMbzT+Q=",
       "System.Private.CoreLib.dll": "sha256-l+\/quNqfNCSUDSMJcp0+IxlSdOdnAtwVVWMXmYGHMpg=",
-      "MyWallet.dll": "sha256-gKh98wKN0LWZz4N+fzQgG2cr8OUTCXZYcrdibLeY\/qQ="
+      "MyWallet.dll": "sha256-qHx\/yddImhEX7bhlREtbi6\/NWmY6Qw3EGPT52IA+sRk="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
-      "MyWallet.pdb": "sha256-7QOIaw3M16SbmVUluImYCBZ25O6uFrw1yyyvDME+uJ4="
+      "MyWallet.pdb": "sha256-QKfqmOk6x7eZBPpCNJxGkSYEIc4X2UYPTlUEffqYWxc="
     },
     "runtime": {
       "dotnet.7.0.1.krh1tcb96h.js": "sha256-jjax3FMRXzFAziWowdtJf6vipP2xXAaA5gD6VBYB6Y0=",

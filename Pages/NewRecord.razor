@@ -1,14 +1,16 @@
 ﻿@inject IMessageService Message
 @inject IExpenseService ExpenseService
+@inject IAccessTokenProvider TokenProvider
+
+@using System.Text.Json;
+@using MyWallet.Services
+@using Tag = AntDesign.Tag
 
 @page "/newrecord"
 
 <PageTitle>Novo Registro</PageTitle>
 
 <h1>Novo Registro</h1>
-
-@using System.Text.Json;
-@using MyWallet.Services
 
 <Form Model="@expense"
       LabelColSpan="4"

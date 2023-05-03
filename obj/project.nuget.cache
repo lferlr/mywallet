@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "4PWHIGsygGdNJUoiz1L19qIrkXPde9b1SZG5rg/IOeRLOYYhvhNNXByp2BcIWo8HgxZARd4Dpiua1Tv4MsDADQ==",
+  "dgSpecHash": "nQCvpJwA7j4jxhV4unYvpx0ZsKVJG589h6gRRa8FNmTwgkkY5+yZdB8ykI7DvOUTRTW/tdXgHxuztwS0UOqBoA==",
   "success": true,
   "projectFilePath": "/Users/lucasrodrigues/dev/Blazor/MyWallet/MyWallet.csproj",
   "expectedPackageFiles": [

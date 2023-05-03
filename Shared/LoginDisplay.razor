@@ -2,19 +2,23 @@
 
 <AuthorizeView>
     <Authorized>
-        <a href="authentication/profile">Hello, @context.User.Identity?.Name</a>
-        <button class="nav-link btn btn-link" @onclick="BeginLogOut">Sair</button>
+        <div class="d-flex justify-content-center align-content-center">
+            <Avatar Src="@context.User.Claims.First(x => x.Type == "picture").Value"/>
+            <Text Type="success">@context.User.Identity?.Name</Text>
+            <button class="nav-link btn btn-link" @onclick="BeginLogOut">Sair</button>
+        </div>
     </Authorized>
     <NotAuthorized>
         <button class="nav-link btn btn-link" @onclick="SigninGoogle">Sign In com Google</button>
-        @* <a href="authentication/login">Log in</a> *@
     </NotAuthorized>
 </AuthorizeView>
 
 @code{
-    private void BeginLogOut() => 
+    private string _accessToken;
+    
+    private void BeginLogOut() =>
         Navigation.NavigateToLogout("authentication/logout");
 
-    private void SigninGoogle() => 
+    private void SigninGoogle() =>
         Navigation.NavigateTo("authentication/login");
 }
