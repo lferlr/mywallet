@@ -1,0 +1,69 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = browser
+build_property.RootNamespace = MyWallet
+build_property.RootNamespace = MyWallet
+build_property.ProjectDir = /Users/lucasrodrigues/dev/Blazor/MyWallet/
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /Users/lucasrodrigues/dev/Blazor/MyWallet
+build_property._RazorSourceGeneratorDebug = 
+
+[/Users/lucasrodrigues/dev/Blazor/MyWallet/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/lucasrodrigues/dev/Blazor/MyWallet/Pages/Authentication.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQXV0aGVudGljYXRpb24ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/lucasrodrigues/dev/Blazor/MyWallet/Pages/Expense.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXhwZW5zZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/lucasrodrigues/dev/Blazor/MyWallet/Pages/FetchData.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRmV0Y2hEYXRhLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/lucasrodrigues/dev/Blazor/MyWallet/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/lucasrodrigues/dev/Blazor/MyWallet/Pages/Investment.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW52ZXN0bWVudC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/lucasrodrigues/dev/Blazor/MyWallet/Pages/NewRecord.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTmV3UmVjb3JkLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/lucasrodrigues/dev/Blazor/MyWallet/Shared/AuthLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL0F1dGhMYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/lucasrodrigues/dev/Blazor/MyWallet/Shared/LoginDisplay.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL0xvZ2luRGlzcGxheS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/lucasrodrigues/dev/Blazor/MyWallet/Shared/RedirectToLogin.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL1JlZGlyZWN0VG9Mb2dpbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/lucasrodrigues/dev/Blazor/MyWallet/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/lucasrodrigues/dev/Blazor/MyWallet/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL01haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-7yxi3zqymt
+
+[/Users/lucasrodrigues/dev/Blazor/MyWallet/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL05hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-kx4xo4k4xm
