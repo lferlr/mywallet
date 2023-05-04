@@ -4,6 +4,8 @@
 @inject IExpenseService ExpenseService;
 @inject HttpClient Http;
 
+@attribute [Authorize]
+
 <PageTitle>Despesas</PageTitle>
 
 <h1>Suas Despesas</h1>
@@ -53,7 +55,21 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        _expenses = await ExpenseService.GetAllById();
+        try
+        {
+            var idUser = new Guid("128e916d-9f7e-439f-8844-061ae658dbf1");
+            _expenses = await Http.GetFromJsonAsync<List<MyWallet.ViewModel.Expense>>($"Expense/GetAll/" + idUser);
+        }
+        catch (AccessTokenNotAvailableException exception)
+        {
+            exception.Redirect();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+            Console.WriteLine(e.InnerException);
+            Console.WriteLine(e.Source);
+        }
     }
 
 }

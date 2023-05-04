@@ -48,6 +48,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTmV3UmVjb3JkLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/lucasrodrigues/dev/Blazor/MyWallet/Shared/AccessControl.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL0FjY2Vzc0NvbnRyb2wucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/lucasrodrigues/dev/Blazor/MyWallet/Shared/AuthLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL0F1dGhMYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 

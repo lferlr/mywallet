@@ -848,3 +848,7 @@
 /Users/lucasrodrigues/dev/Blazor/MyWallet/obj/Debug/net7.0/build-gz/ncb+Kr67.gz
 /Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/appsettings.json
 /Users/lucasrodrigues/dev/Blazor/MyWallet/obj/Debug/net7.0/scopedcss/Pages/Auth/Login.Razor.rz.scp.css
+/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/_framework/Microsoft.Extensions.Http.dll
+/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/wwwroot/_framework/Microsoft.Extensions.Http.dll.gz
+/Users/lucasrodrigues/dev/Blazor/MyWallet/bin/Debug/net7.0/Microsoft.Extensions.Http.dll
+/Users/lucasrodrigues/dev/Blazor/MyWallet/obj/Debug/net7.0/build-gz/f8H788Kb.gz
