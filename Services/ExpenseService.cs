@@ -1,7 +1,5 @@
 using System.Net.Http.Json;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Authorization;
+using Microsoft.AspNetCore.Components.WebAssembly.Authentication;
 using MyWallet.ViewModel;
 
 namespace MyWallet.Services;
@@ -19,15 +17,16 @@ public class ExpenseService : IExpenseService
     {
         try
         {
+            var testBaseAdress = _http.BaseAddress;
             var listExpense = await _http.GetFromJsonAsync<List<Expense>>("Expense/GetAll/");
 
             if (listExpense != null) return listExpense;
 
             return new List<Expense>();
         }
-        catch (Exception e)
+        catch (AccessTokenNotAvailableException exception)
         {
-            Console.WriteLine(e.Message);
+            exception.Redirect();
             return new List<Expense>();
         }
     }
@@ -55,7 +54,6 @@ public class ExpenseService : IExpenseService
     {
         try
         {
-            // TODO: Realizar o ajuste para receber o retorno da API
             // Realizando o id do usuário
             expenseDto.UserId = new Guid().ToString();
             

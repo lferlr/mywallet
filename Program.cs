@@ -8,27 +8,22 @@ var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");
 
-builder.Services.AddAppConfiguration(builder.Configuration);
-
-// builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("https://localhost:7097/") });
 builder.Services.AddHttpClient("ServerAPI", 
-        client =>
-        {
-            client.BaseAddress = new Uri("https://localhost:7097/");
-        }) //builder.HostEnvironment.BaseAddress
+        client => client.BaseAddress = new Uri("https://localhost:7097/")) //builder.HostEnvironment.BaseAddress
     .AddHttpMessageHandler<BaseAddressAuthorizationMessageHandler>();
 
 builder.Services.AddScoped(sp => sp.GetRequiredService<IHttpClientFactory>()
     .CreateClient("ServerAPI"));
 
-builder.Services.AddAntDesign();
-
 builder.Services.AddOidcAuthentication(options =>
 {
     builder.Configuration.Bind("Auth0", options.ProviderOptions);
     options.ProviderOptions.ResponseType = "code";
-
-    options.ProviderOptions.AdditionalProviderParameters.Add("audience",  "https://localhost:7097/");
+    options.ProviderOptions.AdditionalProviderParameters.Add("audience", builder.Configuration["Auth0:Audience"]);
 });
+
+builder.Services.AddAntDesign();
+
+builder.Services.AddAppConfiguration(builder.Configuration);
 
 await builder.Build().RunAsync();
