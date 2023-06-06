@@ -1,13 +1,16 @@
-﻿@inject IMessageService Message
-@inject IExpenseService ExpenseService
-@inject IAccessTokenProvider TokenProvider
+﻿@page "/newrecord"
 
 @using System.Text.Json;
 @using Microsoft.AspNetCore.Components.WebAssembly.Authentication
 @using MyWallet.Services
 @using Tag = AntDesign.Tag
 
-@page "/newrecord"
+@inject IMessageService Message
+@inject IExpenseService ExpenseService
+@inject IAccessTokenProvider TokenProvider
+@inject AuthenticationStateProvider _AuthenticationState
+
+@attribute [Authorize]
 
 <PageTitle>Novo Registro</PageTitle>
 
@@ -63,6 +66,13 @@
     {
         try
         {
+            var auth = _AuthenticationState.GetAuthenticationStateAsync();
+            var sub = auth.Result.User.FindFirst("sub")?.Value;
+            var userId = sub?.Split('|')[1];
+            var teste = auth.Result.User;
+
+            expense.UserId = userId;
+            
             var tt = await ExpenseService.Create(expense);
             Console.WriteLine($"Success:{JsonSerializer.Serialize(expense)}");
             await Success();

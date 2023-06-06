@@ -1,4 +1,5 @@
 using System.Net.Http.Json;
+using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.WebAssembly.Authentication;
 using MyWallet.ViewModel;
 
@@ -7,8 +8,8 @@ namespace MyWallet.Services;
 public class ExpenseService : IExpenseService
 {
     private readonly HttpClient _http;
-
-    public ExpenseService(HttpClient http)
+    
+    public ExpenseService(HttpClient http, AuthenticationStateProvider authenticationStateProvider)
     {
         _http = http;
     }
@@ -35,10 +36,8 @@ public class ExpenseService : IExpenseService
     {
         try
         {
-            var idUser = new Guid("128e916d-9f7e-439f-8844-061ae658dbf1");
-
-            var listExpense = await _http.GetFromJsonAsync<IEnumerable<Expense>>("Expense/GetAll/" + idUser);
-
+            var tt = UserAuthentication.UserId;
+            var listExpense = await _http.GetFromJsonAsync<IEnumerable<Expense>>("Expense/GetAll/" + tt);
             if (listExpense != null) return listExpense;
 
             return new List<Expense>();
@@ -54,9 +53,6 @@ public class ExpenseService : IExpenseService
     {
         try
         {
-            // Realizando o id do usuário
-            expenseDto.UserId = new Guid().ToString();
-            
             var responseExpense = await _http.PostAsJsonAsync("Expense/Create/", expenseDto);
 
             if (!responseExpense.IsSuccessStatusCode)
@@ -72,4 +68,14 @@ public class ExpenseService : IExpenseService
             throw;
         }
     }
+
+    // private async Task GetUserIdAsync()
+    // {
+    //     var authenticationState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+    //     var user = authenticationState.User;
+    //     var userIdClaim = user.FindFirst(c => c.Type == "sub")?.Value;
+    //     UserAuthentication.UserId = ExtractUserId(userIdClaim);
+    //     UserAuthentication.Email = user.FindFirst(c => c.Type == "email")?.Value;
+    //     UserAuthentication.Name = user.FindFirst(c => c.Type == "name")?.Value;
+    // }
 }

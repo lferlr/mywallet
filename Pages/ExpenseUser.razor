@@ -3,7 +3,9 @@
 @using MyWallet.Services
 @using Microsoft.AspNetCore.Components.WebAssembly.Authentication
 
+@inject IAccessTokenProvider TokenProvider;
 @inject IExpenseService ExpenseService;
+@inject AuthenticationStateProvider AuthenticationStateProvider
 @inject HttpClient Http;
 
 @attribute [Authorize]
@@ -59,8 +61,8 @@ else
     {
         try
         {
-            var idUser = new Guid("128e916d-9f7e-439f-8844-061ae658dbf1");
-            _expenses = await Http.GetFromJsonAsync<List<MyWallet.ViewModel.Expense>>($"Expense/GetAll/" + idUser);
+            // var idUser = new Guid("128e916d-9f7e-439f-8844-061ae658dbf1");
+            _expenses = await ExpenseService.GetAllById();
         }
         catch (AccessTokenNotAvailableException exception)
         {
@@ -73,5 +75,4 @@ else
             Console.WriteLine(e.Source);
         }
     }
-
 }

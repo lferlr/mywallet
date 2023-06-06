@@ -1,5 +1,7 @@
 @using Microsoft.AspNetCore.Components.WebAssembly.Authentication
+@using MyWallet.ViewModel
 @inject NavigationManager Navigation
+@inject AuthenticationStateProvider _AuthenticationStateProvider
 
 <AuthorizeView>
     <Authorized>
@@ -22,4 +24,27 @@
 
     private void SigninGoogle() =>
         Navigation.NavigateTo("authentication/login");
+
+    private void UserAuthenticationAuthorized()
+    {
+        var auth = _AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var sub = auth.Result.User.FindFirst("sub")?.Value;
+        
+        UserAuthentication.UserId = ExtractUserId(sub);
+        UserAuthentication.Name = auth.Result.User.FindFirst("name")?.Value;
+        UserAuthentication.Email = auth.Result.User.FindFirst("email")?.Value;
+    }
+    
+    private string ExtractUserId(string userIdClaim)
+    {
+        if (!string.IsNullOrEmpty(userIdClaim))
+        {
+            var parts = userIdClaim.Split('|');
+            if (parts.Length > 1)
+            {
+                return parts[1];
+            }
+        }
+        return userIdClaim;
+    }
 }
