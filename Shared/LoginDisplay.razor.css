@@ -1,0 +1,20 @@
+.container-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.container {
+    padding: 2rem;
+}
+
+.user-avatar {
+    margin-bottom: 2rem;
+    border-bottom-width: thin;
+    border-bottom-style: solid;
+    border-bottom-color: gray;
+}
+
+.items {
+    margin-bottom: 1rem;
+}

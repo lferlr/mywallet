@@ -1,50 +1,50 @@
 @using Microsoft.AspNetCore.Components.WebAssembly.Authentication
 @using MyWallet.ViewModel
 @inject NavigationManager Navigation
-@inject AuthenticationStateProvider _AuthenticationStateProvider
 
 <AuthorizeView>
     <Authorized>
-        <div class="d-flex justify-content-center align-content-center">
-            <Avatar Src="@context.User.Claims.First(x => x.Type == "picture").Value"/>
-            <Text Type="success">@context.User.Identity?.Name</Text>
-            <button class="nav-link btn btn-link" @onclick="BeginLogOut">Sair</button>
-        </div>
+        <Popover OnVisibleChange="OnClickVisibleChange" Visible="_clickVisible" Trigger="@(new AntDesign.Trigger[] { AntDesign.Trigger.Click })" Class="d-flex justify-content-end">
+            <ContentTemplate>
+                <div class="container">
+                    <div class="user-avatar">
+                        <Avatar Src="@context.User.Claims.First(x => x.Type == "picture").Value" Size="large" Icon="user"/>
+                        <Text Type="success">@context.User.Identity?.Name</Text>
+                    </div>
+                    <br>
+                    <div class="items">
+                        <Button Type="@ButtonType.Primary" OnClick="BeginLogOut" Icon="@IconType.Outline.Logout" Size="@ButtonSize.Default">Logout</Button>
+                    </div>
+                    <a @onclick="Close" style="color: darkred">Fechar</a>
+                </div>
+            </ContentTemplate>
+            <ChildContent>
+                <Avatar Src="@context.User.Claims.First(x => x.Type == "picture").Value" Size="large" Icon="user" style="align-items: center; align-content: center; justify-content: center"/>
+            </ChildContent>
+        </Popover>
     </Authorized>
     <NotAuthorized>
-        <button class="nav-link btn btn-link" @onclick="SigninGoogle">Sign In com Google</button>
+        <div style="display: flex; justify-content: flex-end; align-items: center">
+            <Button Type="@ButtonType.Primary" OnClick="SigninGoogle" Icon="@IconType.Outline.Login" Size="@ButtonSize.Default" Class="d-flex justify-content-end">Login</Button>
+        </div>
     </NotAuthorized>
 </AuthorizeView>
 
 @code{
-    private string _accessToken;
+    private bool _clickVisible = false;
     
     private void BeginLogOut() =>
         Navigation.NavigateToLogout("authentication/logout");
 
     private void SigninGoogle() =>
         Navigation.NavigateTo("authentication/login");
-
-    private void UserAuthenticationAuthorized()
-    {
-        var auth = _AuthenticationStateProvider.GetAuthenticationStateAsync();
-        var sub = auth.Result.User.FindFirst("sub")?.Value;
-        
-        UserAuthentication.UserId = ExtractUserId(sub);
-        UserAuthentication.Name = auth.Result.User.FindFirst("name")?.Value;
-        UserAuthentication.Email = auth.Result.User.FindFirst("email")?.Value;
-    }
     
-    private string ExtractUserId(string userIdClaim)
+    private void OnClickVisibleChange(bool visible)
     {
-        if (!string.IsNullOrEmpty(userIdClaim))
-        {
-            var parts = userIdClaim.Split('|');
-            if (parts.Length > 1)
-            {
-                return parts[1];
-            }
-        }
-        return userIdClaim;
+        _clickVisible = visible;
+    }
+    private void Close()
+    {
+        _clickVisible = false;
     }
 }

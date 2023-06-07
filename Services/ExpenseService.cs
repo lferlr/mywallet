@@ -1,4 +1,5 @@
 using System.Net.Http.Json;
+using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.WebAssembly.Authentication;
 using MyWallet.ViewModel;
@@ -8,10 +9,11 @@ namespace MyWallet.Services;
 public class ExpenseService : IExpenseService
 {
     private readonly HttpClient _http;
-    
+    private AuthenticationStateProvider _AuthenticationStateProvider;
     public ExpenseService(HttpClient http, AuthenticationStateProvider authenticationStateProvider)
     {
         _http = http;
+        _AuthenticationStateProvider = authenticationStateProvider;
     }
 
     public async Task<IEnumerable<Expense>> GetAll()
@@ -69,13 +71,26 @@ public class ExpenseService : IExpenseService
         }
     }
 
-    // private async Task GetUserIdAsync()
-    // {
-    //     var authenticationState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
-    //     var user = authenticationState.User;
-    //     var userIdClaim = user.FindFirst(c => c.Type == "sub")?.Value;
-    //     UserAuthentication.UserId = ExtractUserId(userIdClaim);
-    //     UserAuthentication.Email = user.FindFirst(c => c.Type == "email")?.Value;
-    //     UserAuthentication.Name = user.FindFirst(c => c.Type == "name")?.Value;
-    // }
+    private async Task GetUserIdAsync()
+    {
+        var authenticationState = await _AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authenticationState.User;
+        var userIdClaim = user.FindFirst(c => c.Type == "sub")?.Value;
+        UserAuthentication.UserId = ExtractUserId(userIdClaim);
+        UserAuthentication.Email = user.FindFirst(c => c.Type == "email")?.Value;
+        UserAuthentication.Name = user.FindFirst(c => c.Type == "name")?.Value;
+    }
+    
+    private string ExtractUserId(string userIdClaim)
+    {
+        if (!string.IsNullOrEmpty(userIdClaim))
+        {
+            var parts = userIdClaim.Split('|');
+            if (parts.Length > 1)
+            {
+                return parts[1];
+            }
+        }
+        return userIdClaim;
+    }
 }

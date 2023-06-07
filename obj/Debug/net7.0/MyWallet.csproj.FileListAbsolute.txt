@@ -872,3 +872,4 @@
 /Users/lucasrodrigues/dev/Blazor/MyWallet/obj/Debug/net7.0/build-gz/TgSas+YX.gz
 /Users/lucasrodrigues/dev/Blazor/MyWallet/obj/Debug/net7.0/build-gz/ZAdWEf8h.gz
 /Users/lucasrodrigues/dev/Blazor/MyWallet/obj/Debug/net7.0/build-gz/ML5N2WZ+.gz
+/Users/lucasrodrigues/dev/Blazor/MyWallet/obj/Debug/net7.0/scopedcss/Shared/LoginDisplay.razor.rz.scp.css
