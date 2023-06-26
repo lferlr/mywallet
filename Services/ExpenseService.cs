@@ -9,18 +9,19 @@ namespace MyWallet.Services;
 public class ExpenseService : IExpenseService
 {
     private readonly HttpClient _http;
-    private AuthenticationStateProvider _AuthenticationStateProvider;
+    private readonly AuthenticationStateProvider _authenticationStateProvider;
     public ExpenseService(HttpClient http, AuthenticationStateProvider authenticationStateProvider)
     {
         _http = http;
-        _AuthenticationStateProvider = authenticationStateProvider;
+        _authenticationStateProvider = authenticationStateProvider;
+        
+        GetUserIdAsync().Wait();
     }
 
     public async Task<IEnumerable<Expense>> GetAll()
     {
         try
         {
-            var testBaseAdress = _http.BaseAddress;
             var listExpense = await _http.GetFromJsonAsync<List<Expense>>("Expense/GetAll/");
 
             if (listExpense != null) return listExpense;
@@ -38,8 +39,7 @@ public class ExpenseService : IExpenseService
     {
         try
         {
-            var tt = UserAuthentication.UserId;
-            var listExpense = await _http.GetFromJsonAsync<IEnumerable<Expense>>("Expense/GetAll/" + tt);
+            var listExpense = await _http.GetFromJsonAsync<IEnumerable<Expense>>("Expense/GetAll/" + UserAuthentication.UserId);
             if (listExpense != null) return listExpense;
 
             return new List<Expense>();
@@ -55,6 +55,7 @@ public class ExpenseService : IExpenseService
     {
         try
         {
+            expenseDto.UserId = UserAuthentication.UserId;
             var responseExpense = await _http.PostAsJsonAsync("Expense/Create/", expenseDto);
 
             if (!responseExpense.IsSuccessStatusCode)
@@ -73,12 +74,15 @@ public class ExpenseService : IExpenseService
 
     private async Task GetUserIdAsync()
     {
-        var authenticationState = await _AuthenticationStateProvider.GetAuthenticationStateAsync();
-        var user = authenticationState.User;
-        var userIdClaim = user.FindFirst(c => c.Type == "sub")?.Value;
-        UserAuthentication.UserId = ExtractUserId(userIdClaim);
-        UserAuthentication.Email = user.FindFirst(c => c.Type == "email")?.Value;
-        UserAuthentication.Name = user.FindFirst(c => c.Type == "name")?.Value;
+        if (string.IsNullOrEmpty(UserAuthentication.UserId))
+        {
+            var authenticationState = await _authenticationStateProvider.GetAuthenticationStateAsync();
+            var user = authenticationState.User;
+            var userIdClaim = user.FindFirst(c => c.Type == "sub")?.Value;
+            UserAuthentication.UserId = ExtractUserId(userIdClaim);
+            UserAuthentication.Email = user.FindFirst(c => c.Type == "email")?.Value;
+            UserAuthentication.Name = user.FindFirst(c => c.Type == "name")?.Value;
+        }
     }
     
     private string ExtractUserId(string userIdClaim)

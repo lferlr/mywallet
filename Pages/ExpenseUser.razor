@@ -35,6 +35,12 @@
         <PropertyColumn Property="c => c.RegistrationDate" Title="Data de Registro" Format="dd-MM-yyyy">
             <a>@context.RegistrationDate.ToString("d/M/yy")</a>
         </PropertyColumn>
+        <PropertyColumn Property="c => c.Installments" Title="Quantidade de Parcelas">
+            <a>@context.Installments</a>
+        </PropertyColumn>
+        <PropertyColumn Property="c => c.MethodPayment" Title="Método de pagamento">
+            <a>@context.MethodPayment.ToString()</a>
+        </PropertyColumn>
         <PropertyColumn Property="c => c.Status" Title="Status">
             @if (context.Status)
             {
@@ -61,7 +67,6 @@ else
     {
         try
         {
-            // var idUser = new Guid("128e916d-9f7e-439f-8844-061ae658dbf1");
             _expenses = await ExpenseService.GetAllById();
         }
         catch (AccessTokenNotAvailableException exception)

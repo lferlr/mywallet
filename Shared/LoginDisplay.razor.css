@@ -5,11 +5,11 @@
 }
 
 .container {
-    padding: 2rem;
+    padding: 1rem;
 }
 
 .user-avatar {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     border-bottom-width: thin;
     border-bottom-style: solid;
     border-bottom-color: gray;
@@ -17,4 +17,10 @@
 
 .items {
     margin-bottom: 1rem;
+}
+
+.content-child-div {
+    display: flex; 
+    justify-content: end; 
+    align-items: center;
 }

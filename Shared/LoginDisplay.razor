@@ -4,28 +4,28 @@
 
 <AuthorizeView>
     <Authorized>
-        <Popover OnVisibleChange="OnClickVisibleChange" Visible="_clickVisible" Trigger="@(new AntDesign.Trigger[] { AntDesign.Trigger.Click })" Class="d-flex justify-content-end">
+        <Popover Placement="@Placement.BottomRight" Visible="_clickVisible" Trigger="@(new[] {AntDesign.Trigger.Click})" Class="d-flex justify-content-end">
             <ContentTemplate>
                 <div class="container">
                     <div class="user-avatar">
                         <Avatar Src="@context.User.Claims.First(x => x.Type == "picture").Value" Size="large" Icon="user"/>
                         <Text Type="success">@context.User.Identity?.Name</Text>
                     </div>
-                    <br>
                     <div class="items">
                         <Button Type="@ButtonType.Primary" OnClick="BeginLogOut" Icon="@IconType.Outline.Logout" Size="@ButtonSize.Default">Logout</Button>
                     </div>
-                    <a @onclick="Close" style="color: darkred">Fechar</a>
                 </div>
             </ContentTemplate>
             <ChildContent>
-                <Avatar Src="@context.User.Claims.First(x => x.Type == "picture").Value" Size="large" Icon="user" style="align-items: center; align-content: center; justify-content: center"/>
+                <div class="content-child-div">
+                    <Avatar Src="@context.User.Claims.First(x => x.Type == "picture").Value" Size="large" Class="mt-3" Icon="user" />
+                </div>
             </ChildContent>
         </Popover>
     </Authorized>
     <NotAuthorized>
-        <div style="display: flex; justify-content: flex-end; align-items: center">
-            <Button Type="@ButtonType.Primary" OnClick="SigninGoogle" Icon="@IconType.Outline.Login" Size="@ButtonSize.Default" Class="d-flex justify-content-end">Login</Button>
+        <div class="d-flex justify-content-end align-items-center">
+            <Button Type="@ButtonType.Primary" OnClick="SigninGoogle" Icon="@IconType.Outline.Login" Size="@ButtonSize.Default" Class="mt-3">Login</Button>
         </div>
     </NotAuthorized>
 </AuthorizeView>

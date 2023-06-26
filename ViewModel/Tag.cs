@@ -1,4 +1,3 @@
-using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace MyWallet.ViewModel;
@@ -15,8 +14,6 @@ public enum Tag
     Mercado,
     [Display(Name= "Lazer")]
     Lazer,
-    [Display(Name= "Cartão")]
-    Cartao,
     [Display(Name= "Educação")]
     Educacao,
     [Display(Name= "Farmácia")]
