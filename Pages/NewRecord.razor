@@ -1,16 +1,15 @@
 ﻿@page "/newrecord"
 
 @using System.Text.Json;
-@using Microsoft.AspNetCore.Components.WebAssembly.Authentication
-@using MyWallet.Services
-@using MyWallet.ViewModel
-@using Tag = AntDesign.Tag
-@using System.Globalization
+@using Microsoft.AspNetCore.Components.WebAssembly.Authentication;
+@using MyWallet.Services;
+@using MyWallet.ViewModel;
 
-@inject IMessageService Message
-@inject IExpenseService ExpenseService
-@inject IAccessTokenProvider TokenProvider
-@inject AuthenticationStateProvider _AuthenticationState
+@inject IMessageService Message;
+@inject IExpenseService ExpenseService;
+@inject IAccessTokenProvider TokenProvider;
+@inject AuthenticationStateProvider _AuthenticationState;
+@inject NavigationManager Navigate;
 
 @attribute [Authorize]
 
@@ -28,7 +27,7 @@
         <Input @bind-Value="@context.Category"/>
     </FormItem>
     <FormItem Label="Descrição">
-        <TextArea @bind-Value="@context.Description" ></TextArea>
+        <TextArea @bind-Value="@context.Description"></TextArea>
     </FormItem>
     <FormItem Label="Data de Inclusão">
         <DatePicker @bind-Value="@context.RegistrationDate" DefaultPickerValue="DateTime.Now" DefaultValue="DateTime.Now" Format="dd/MM/yyyy" />
@@ -46,7 +45,7 @@
         <EnumSelect TEnum="Payment" OnSelectedItemChanged="HandleChange" />
     </FormItem>
     <FormItem Label="Tag">
-        <EnumSelect TEnum="MyWallet.ViewModel.Tag" OnSelectedItemChanged="HandleChange" />
+        <EnumSelect TEnum="ViewModel.Tag" OnSelectedItemChanged="HandleChange" />
     </FormItem>
     <FormItem Label="Status">
         <Switch @bind-Value="@context.Status" />
@@ -66,12 +65,10 @@
         try
         {
             var result = await ExpenseService.Create(expense);
-            Console.WriteLine($"Success:{JsonSerializer.Serialize(expense)}");
             await Success();
         }
         catch (Exception e)
         {
-            Console.WriteLine($"Failed:{JsonSerializer.Serialize(expense)}");
             await Error();
         }
     }
@@ -95,6 +92,7 @@
     private async Task Success()
     {
         await Message.Success("Seu registro foi adicionado!");
+        Navigate.NavigateTo("/expenseUser");
     }
     
     private async Task Error()

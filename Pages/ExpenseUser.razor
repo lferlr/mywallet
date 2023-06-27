@@ -2,15 +2,18 @@
 
 @using MyWallet.Services
 @using Microsoft.AspNetCore.Components.WebAssembly.Authentication
+@using MyWallet.ViewModel
+@using Tag = AntDesign.Tag
 
 @inject IAccessTokenProvider TokenProvider;
 @inject IExpenseService ExpenseService;
 @inject AuthenticationStateProvider AuthenticationStateProvider
 @inject HttpClient Http;
+@inject IMessageService _message
 
 @attribute [Authorize]
 
-<PageTitle>Despesas</PageTitle>
+<PageTitle>MyWallet - Minhas Despesas</PageTitle>
 
 <h1>Suas Despesas</h1>
 
@@ -39,7 +42,7 @@
             <a>@context.Installments</a>
         </PropertyColumn>
         <PropertyColumn Property="c => c.MethodPayment" Title="Método de pagamento">
-            <a>@context.MethodPayment.ToString()</a>
+            <a>@context.MethodPayment</a>
         </PropertyColumn>
         <PropertyColumn Property="c => c.Status" Title="Status">
             @if (context.Status)
@@ -51,18 +54,96 @@
                 <Tag Color="@PresetColor.Green.ToString()">Paga</Tag>
             }
         </PropertyColumn>
+        <ActionColumn Title="Action">
+            <Space>
+                <SpaceItem><Button Danger OnClick="()=>Delete(context.Id)">Deletar</Button></SpaceItem>
+                <SpaceItem>
+                    <Button @onclick="_=>Open(context)">Visualizar</Button>
+                </SpaceItem>
+            </Space>
+        </ActionColumn>
     </Table>
 }
 else
 {
     <p>
-        <em>Loading...</em>
+        <em>Carregando...</em>
     </p>
 }
 
+@* Visualizar Despesa *@
+
+<div>
+    <Drawer Closable="true" Width="720" Visible="visible" Title='("Submit from in Drawer")' OnClose="_=>Close()">
+        <Template style="height:90%">
+            <Row Gutter="16" Style="margin-top: 0.375rem">
+                <AntDesign.Col Span="12">
+                    <Text>Título da Despesa</Text>
+                    <Input @bind-Value="@_viewExpense.Category"/>
+                </AntDesign.Col>
+            </Row>
+            <Row Gutter="16" Style="margin-top: 0.375rem">
+                <AntDesign.Col Span="12">
+                    <Text>Descrição</Text>
+                    <TextArea @bind-Value="@_viewExpense.Description"></TextArea>
+                </AntDesign.Col>
+            </Row>
+            <Row Gutter="16" Style="margin-top: 0.375rem">
+                <AntDesign.Col Span="12">
+                    <Text>Data de Inclusão</Text>
+                    <br>
+                    <DatePicker @bind-Value="@_viewExpense.RegistrationDate" DefaultPickerValue="DateTime.Now" DefaultValue="DateTime.Now" Format="dd/MM/yyyy"/>
+                </AntDesign.Col>
+            </Row>
+            <Row Gutter="16" Style="margin-top: 0.375rem">
+                <AntDesign.Col Span="12">
+                    <Text>Data de Vencimento</Text>
+                    <br>
+                    <DatePicker @bind-Value="@_viewExpense.DueDate" DefaultPickerValue="DateTime.Now" DefaultValue="DateTime.Now" Format="dd/MM/yyyy"/>
+                </AntDesign.Col>
+            </Row>
+            <Row Gutter="16" Style="margin-top: 0.375rem">
+                <AntDesign.Col Span="12">
+                    <Text>Valor Total</Text>
+                    <br>
+                    <AntDesign.InputNumber @bind-Value="@_viewExpense.Value" PlaceHolder="000.00" />
+                </AntDesign.Col>
+            </Row>
+            <Row Gutter="16" Style="margin-top: 0.375rem">
+                <AntDesign.Col Span="12">
+                    <Text>Quantidade de Parcelas</Text>
+                    <br>
+                    <AntDesign.InputNumber @bind-Value="_viewExpense.Installments" Min="1" DefaultValue="1" />
+                </AntDesign.Col>
+            </Row>
+            <Row Gutter="16" Style="margin-top: 0.375rem">
+                <AntDesign.Col Span="12">
+                    <Text>Método de Pagamento</Text>
+                    <EnumSelect TEnum="Payment" bind-Value="_viewExpense.MethodPayment" />
+                </AntDesign.Col>
+            </Row>
+            <Row Gutter="16" Style="margin-top: 0.375rem">
+                <AntDesign.Col Span="12">
+                    <Text>Tag</Text>
+                    <EnumSelect TEnum="ViewModel.Tag" bind-Value="_viewExpense.Tag" />
+                </AntDesign.Col>
+            </Row>
+            <Row Gutter="16" Style="margin-top: 0.375rem">
+                <AntDesign.Col Span="12">
+                    <Text>Status</Text>
+                    <br>
+                    <Switch @bind-Value="@_viewExpense.Status" />
+                </AntDesign.Col>
+            </Row>
+        </Template>
+    </Drawer>
+</div>
+
 @code {
     private IEnumerable<MyWallet.ViewModel.Expense>? _expenses;
-
+    bool visible = false;
+    private ViewModel.Expense _viewExpense = new();
+    
     protected override async Task OnInitializedAsync()
     {
         try
@@ -79,5 +160,31 @@ else
             Console.WriteLine(e.InnerException);
             Console.WriteLine(e.Source);
         }
+    }
+
+    public async Task Delete(Guid idExpense)
+    {
+        var result = await ExpenseService.Delete(idExpense);
+
+        if (!result.Success)
+        {
+            await _message.Error("Não foi possível deletar a despesa!" + "Mensagem API: " + result.Message);
+            return;
+        }
+        
+        await _message.Success("Sua despesa foi deletada com sucesso!" + "Mensagem API: " + result.Message);
+        
+        _expenses = await ExpenseService.GetAllById();
+    }
+
+    void Open(ViewModel.Expense expense)
+    {
+        _viewExpense = expense;
+        visible = true;
+    }
+
+    void Close()
+    {
+        visible = false;
     }
 }

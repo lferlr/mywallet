@@ -72,6 +72,25 @@ public class ExpenseService : IExpenseService
         }
     }
 
+    public async Task<ResponseExpense> Delete(Guid idExpense)
+    {
+        try
+        {
+            var result = await _http.DeleteAsync("Expense/" + idExpense);
+            
+            if (!result.IsSuccessStatusCode)
+                return new ResponseExpense();
+            
+            var content = await result.Content.ReadFromJsonAsync<ResponseExpense>();
+            return content ?? new ResponseExpense();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+            throw;
+        }
+    }
+
     private async Task GetUserIdAsync()
     {
         if (string.IsNullOrEmpty(UserAuthentication.UserId))
