@@ -1,0 +1,26 @@
+.container-avatar[b-4g4xl36uau] {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.container[b-4g4xl36uau] {
+    padding: 1rem;
+}
+
+.user-avatar[b-4g4xl36uau] {
+    margin-bottom: 1rem;
+    border-bottom-width: thin;
+    border-bottom-style: solid;
+    border-bottom-color: gray;
+}
+
+.items[b-4g4xl36uau] {
+    margin-bottom: 1rem;
+}
+
+.content-child-div[b-4g4xl36uau] {
+    display: flex; 
+    justify-content: end; 
+    align-items: center;
+}
