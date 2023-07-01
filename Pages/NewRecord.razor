@@ -16,59 +16,64 @@
 <PageTitle>MyWallet - Novo Registro</PageTitle>
 
 <h1>Nova Despesa</h1>
+<Spin Spinning="_loader">
+    <Form Model="@expense"
+          LabelColSpan="4"
+          WrapperColSpan="16"
+          OnFinish="OnFinish"
+          OnFinishFailed="OnFinishFailed"
+          Size="@AntSizeLDSType.Default">
+        <FormItem Label="Título da Despesa">
+            <Input @bind-Value="@context.Category"/>
+        </FormItem>
+        <FormItem Label="Descrição">
+            <TextArea @bind-Value="@context.Description"></TextArea>
+        </FormItem>
+        <FormItem Label="Data de Inclusão">
+            <DatePicker @bind-Value="@context.RegistrationDate" DefaultPickerValue="DateTime.Now" DefaultValue="DateTime.Now" Format="dd/MM/yyyy" />
+        </FormItem>
+        <FormItem Label="Data de Vencimento">
+            <DatePicker @bind-Value="@context.DueDate" DefaultValue="DateTime.Now" DefaultPickerValue="DateTime.Now" Format="dd/MM/yyyy" />
+        </FormItem>
+        <FormItem Label="Valor Total">
+            <AntDesign.InputNumber @bind-Value="@context.Value" PlaceHolder="000.00" />
+        </FormItem>
+        <FormItem Label="Quantidade de Parcelas">
+            <AntDesign.InputNumber @bind-Value="context.Installments" Min="1" DefaultValue="1" />
+        </FormItem>
+        <FormItem Label="Método de Pagamento">
+            <EnumSelect TEnum="Payment" OnSelectedItemChanged="HandleChange" />
+        </FormItem>
+        <FormItem Label="Tag">
+            <EnumSelect TEnum="ViewModel.Tag" OnSelectedItemChanged="HandleChange" />
+        </FormItem>
+        <FormItem Label="Status">
+            <Switch @bind-Value="@context.Status" />
+        </FormItem>
 
-<Form Model="@expense"
-      LabelColSpan="4"
-      WrapperColSpan="16"
-      OnFinish="OnFinish"
-      OnFinishFailed="OnFinishFailed"
-      Size="@AntSizeLDSType.Default">
-    <FormItem Label="Título da Despesa">
-        <Input @bind-Value="@context.Category"/>
-    </FormItem>
-    <FormItem Label="Descrição">
-        <TextArea @bind-Value="@context.Description"></TextArea>
-    </FormItem>
-    <FormItem Label="Data de Inclusão">
-        <DatePicker @bind-Value="@context.RegistrationDate" DefaultPickerValue="DateTime.Now" DefaultValue="DateTime.Now" Format="dd/MM/yyyy" />
-    </FormItem>
-    <FormItem Label="Data de Vencimento">
-        <DatePicker @bind-Value="@context.DueDate" DefaultValue="DateTime.Now" DefaultPickerValue="DateTime.Now" Format="dd/MM/yyyy" />
-    </FormItem>
-    <FormItem Label="Valor Total">
-        <AntDesign.InputNumber @bind-Value="@context.Value" PlaceHolder="000.00" />
-    </FormItem>
-    <FormItem Label="Quantidade de Parcelas">
-        <AntDesign.InputNumber @bind-Value="context.Installments" Min="1" DefaultValue="1" />
-    </FormItem>
-    <FormItem Label="Método de Pagamento">
-        <EnumSelect TEnum="Payment" OnSelectedItemChanged="HandleChange" />
-    </FormItem>
-    <FormItem Label="Tag">
-        <EnumSelect TEnum="ViewModel.Tag" OnSelectedItemChanged="HandleChange" />
-    </FormItem>
-    <FormItem Label="Status">
-        <Switch @bind-Value="@context.Status" />
-    </FormItem>
-
-    <FormItem WrapperColOffset="11" WrapperColSpan="16">
-        <Button HtmlType="submit" Color="Color.Green4" Type="@ButtonType.Primary" Icon="@IconType.Outline.Check" Size="@ButtonSize.Default">Registrar</Button>
-    </FormItem>
-</Form>
+        <FormItem WrapperColOffset="11" WrapperColSpan="16">
+            <Button HtmlType="submit" Color="Color.Green4" Type="@ButtonType.Primary" Icon="@IconType.Outline.Check" Size="@ButtonSize.Default">Registrar</Button>
+        </FormItem>
+    </Form>
+</Spin>
 
 @code
 {
     private ViewModel.Expense expense = new();
-
+    bool _loader = false;
+    
     private async void OnFinish(EditContext editContext)
     {
         try
         {
-            var result = await ExpenseService.Create(expense);
+            ActiveLoader();
+            await ExpenseService.Create(expense);
             await Success();
+            DesactiveLoader();
         }
         catch (Exception e)
         {
+            DesactiveLoader();
             await Error();
         }
     }
@@ -92,12 +97,23 @@
     private async Task Success()
     {
         await Message.Success("Seu registro foi adicionado!");
+        ActiveLoader();
         Navigate.NavigateTo("/expenseUser");
+        DesactiveLoader();
     }
     
     private async Task Error()
     {
         await Message.Error("Não foi possivel adicionar seu registro! Tente novamente ou reinicie o sistema");
+    }
+    
+    void ActiveLoader()
+    {
+        _loader = true;
+    }
 
+    void DesactiveLoader()
+    {
+        _loader = false;
     }
 }
