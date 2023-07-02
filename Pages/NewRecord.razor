@@ -15,7 +15,7 @@
 
 <PageTitle>MyWallet - Novo Registro</PageTitle>
 
-<h1>Nova Despesa</h1>
+<h1>Novo registro de Despesa</h1>
 <Spin Spinning="_loader">
     <Form Model="@expense"
           LabelColSpan="4"
@@ -42,10 +42,10 @@
             <AntDesign.InputNumber @bind-Value="context.Installments" Min="1" DefaultValue="1" />
         </FormItem>
         <FormItem Label="Método de Pagamento">
-            <EnumSelect TEnum="Payment" OnSelectedItemChanged="HandleChange" />
+            <EnumSelect TEnum="Payment" OnSelectedItemChanged="HandleChange"/>
         </FormItem>
         <FormItem Label="Tag">
-            <EnumSelect TEnum="ViewModel.Tag" OnSelectedItemChanged="HandleChange" />
+            <EnumSelect TEnum="ViewModel.Tag" OnSelectedItemChanged="HandleChange"/>
         </FormItem>
         <FormItem Label="Status">
             <Switch @bind-Value="@context.Status" />
